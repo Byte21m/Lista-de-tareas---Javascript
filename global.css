@@ -1,0 +1,75 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+:root {
+    color-scheme: light dark;
+
+    /* Color */
+ /* MODO CLARO: azul */
+    --primary-color-light: #2B53F4; 
+    --border-color-light: rgba(0, 0, 0, 0.1);
+    --text-light: black;
+    --bg-color-light: white;
+    --nav-btn-active-color-light: rgb(220, 220, 220);
+
+  
+    /* MODO OSCURO: Un azul más claro y suave */
+    --primary-color-dark: #6A8DFF; /* Derivado del azul principal */
+    --border-color-dark: rgba(255, 255, 255, 0.1);
+    --text-dark: rgb(225, 225, 225);
+    --bg-color-dark: rgb(26, 26, 26);
+    --nav-btn-active-color-dark: rgb(220, 220, 220);
+    --line-black: rgb(0,0,0, 0.1);
+
+/* --- NUEVOS COLORES AÑADIDOS --- */
+
+    /* Fondo para Input y Lista */
+    --component-bg-light: rgba(0, 0, 0, 0.05); /* Fondo gris claro en modo claro */
+    --component-bg-dark: rgba(255, 255, 255, 0.1); /* Fondo blanco claro en modo oscuro */
+    
+    /* Botón Verde de Agregar Tarea */
+    --green-btn-bg-light: #006400; /* Verde oscuro en modo claro */
+    --green-btn-text-light: white; /* Texto blanco en modo claro */
+    
+    --green-btn-bg-dark: #98FB98;   /* Verde pastel en modo oscuro */
+    --green-btn-text-dark: black;  /* Texto negro en modo oscuro */
+
+    /* --- FIN DE NUEVOS COLORES --- */
+
+    --component-bg: light-dark(var(--component-bg-light), var(--component-bg-dark));
+    --green-btn-bg: light-dark(var(--green-btn-bg-light), var(--green-btn-bg-dark));
+    --green-btn-text: light-dark(var(--green-btn-text-light), var(--green-btn-text-dark));
+   
+
+    /* Layout */
+    --max-width-page: 80rem;
+
+    /* Dark mode */
+    --primary-color: light-dark(var(--primary-color-light), var(--primary-color-dark));
+    --border-color: light-dark(var(--border-color-light), var(--border-color-dark));
+    --text-color: light-dark(var(--text-light), var(--text-dark));
+    --bg-color: light-dark(var(--bg-color-light), var(--bg-color-dark));
+    --nav-btn-active-color: light-dark(var(--nav-btn-active-color-light), var(--nav-btn-active-color-dark));
+
+    /* --- NUEVA VARIABLE AÑADIDA --- */
+    --component-bg: light-dark(var(--component-bg-light), var(--component-bg-dark));
+}
+
+body, h1, p {
+    margin: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: var(--bg-color);
+
+}
+

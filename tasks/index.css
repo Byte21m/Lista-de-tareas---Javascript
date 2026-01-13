@@ -1,0 +1,217 @@
+li {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los iconos y el texto */
+    gap: 1.1rem; /*damos espacio entre las listas */
+    padding: 1rem 1rem; /*Lo que haremos aqui seria dar espacio entre los lados de los iconos*/
+    border-bottom: 1px solid var(--text-color); /*Linea separadora*/
+    
+}
+/* Quita la línea divisoria del último elemento */
+li:last-child {
+    border-bottom: none;
+}
+
+/* Párrafo con el texto de la tarea */
+li p {
+    flex-grow: 1; /* Hace que el texto ocupe todo el espacio sobrante */
+    margin: 0;
+    color: var(--green-btn-text); 
+    /*
+    Esto usa:
+    --green-btn-text-light (white) en Modo Claro
+    --green-btn-text-dark (black) en Modo Oscuro
+    */
+}
+
+/* Botones dentro de las tareas (base) */
+li button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    
+    /* Centramos el icono  */
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+/* Iconos dentro de los botones de las tareas */
+li ion-icon {
+    font-size: 2rem;
+}
+
+/* Botón de eliminar (usando la clase .eliminar del HTML) */
+.eliminar ion-icon {
+  color: white; 
+    background-color: #ef4444; 
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.eliminar:hover ion-icon {
+   transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+/* Botón de editar (usando la clase .editar del HTML) */
+/* (Tú usaste .complete-btn, pero en tu HTML el botón es .editar) */
+.editar ion-icon {
+ color: white; 
+    background-color: green;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.editar:hover ion-icon {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+ul {
+    /* height: 20rem; */
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+
+    
+   /* Usamos el mismo fondo que el input para consistencia */
+    background-color: light-dark(rgba(0,0,0,0.05), rgba(255,255,255,0.1));
+    overflow: auto;
+    max-height: 20rem; /* Altura máxima antes de que aparezca el scroll */
+}
+
+/* Agregamos estilos para centrar el contenido en la página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh; /* Ocupa al menos toda la altura de la pantalla */
+    padding: 1rem; /*Revisar esta linea de codigo */
+}
+/* --- Estilo del main--- */
+main {
+    width: 100%;
+    max-width: 45rem; /* Ancho máximo*/
+    background-color: var(--primary-color); /* Usamos el color de fondo oscuro de tus variables globales */
+    padding: 1rem 1rem 2rem;
+    border-radius: 2rem; /* Bordes redondeados */
+    border: 1px solid var(--bg-color-light); /* Un borde sutil */
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem; /* Espacio entre el formulario y la lista de tareas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Centrar el texto error en la lista */
+#error{
+    text-align: left;
+    color: var(--green-btn-text);
+    font-size: 0.9rem;
+    padding: 0 1.5rem; /*Alinear con el texto de agregar tareas */
+    
+}
+/* --- Estilos del Formulario --- */
+form {
+  display: flex;
+  flex-direction: column; /* Coloca el input-group arriba y el error abajo */
+  gap: 1rem; /* Espacio entre el input-group y el error */
+  margin-bottom: 1.5rem; /* Espacio entre el form y la lista */
+
+  /* 1. Añadimos espacio entre el error y la nueva línea */
+  padding-bottom: 1rem; 
+  
+  /* 2. Añadimos la línea separadora */
+  border-bottom: 1px solid var(--text-color);
+  
+
+}
+
+form div{
+
+    display: flex;
+    gap: 0.5rem; /* Pequeño espacio entre el input y el botón */
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* --- Estilos para la barra de input --- */
+form input[type="text"] {
+    flex-grow: 1; /* Hace que la barra ocupe todo el espacio disponible */
+    min-width: 0;
+    border: none;
+    padding: 0.75rem 1rem; /* Relleno interno para que sea más alta */
+    font-size: 1rem;
+    border-radius: 1rem; /* Bordes redondeados */
+    
+    /* Fondo que cambia con el modo claro/oscuro */
+    background-color: light-dark(rgba(80, 125, 221, 0.973), rgba(255, 255, 255, 0.438));
+    color: var(--text-color); /* El color del texto se adapta al tema */
+}
+
+/* Estilo para el texto de "Crear una tarea" */
+form input[type="text"]::placeholder {
+    color: var(--green-btn-text);
+    opacity: 1;
+}
+
+/* Quita el borde azul que pone el navegador al hacer clic */
+form input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color); /* Resalta con tu color rosita */
+}
+
+/* --- Estilos para el botón de Agregar --- */
+#agregar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    
+    /* Centra el icono */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#agregar-btn { /* El icono en sí */
+    font-size: 3rem; /* Icono más grande */
+    
+    /* Colores verdes que cambian con el modo */
+    background-color: var(--primary-color); 
+    color: var(--green-btn-text); 
+    
+    padding: 0.2rem; /* Ajuste para que se vea circular */
+    
+    transition: transform 0.2s ease;
+}
+
+/* Efecto al pasar el mouse */
+#agregar:hover #agregar-btn {
+    transform: scale(1.1); /* Agranda un poco el icono */
+}
+
+
+/* En pantallas móviles (por defecto): 'main' tiene width: 100%.
+  Se centrará gracias al 'padding: 1rem' del 'body'.
+*/
+
+/* Para pantallas de tablet */
+@media (min-width: 768px) {
+    main {
+        width: 80%;
+        /* Añadimos un max-width para que no se vea mal en tablets muy anchas */
+        max-width: 45rem; 
+    }
+}
+
+/* Para pantallas de escritorio (igual que tu ejemplo) */
+@media (min-width: 1024px) {
+    main {
+        /* Reducimos el porcentaje de ancho, pero aumentamos el 
+           ancho máximo para que se vea centrado*/
+        width: 70%;
+        max-width: 45rem;
+    }
+}
+
