@@ -22,5 +22,5 @@ El proyecto está construido con **HTML5**, **CSS3** moderno y **JavaScript (Van
 * **CSS3:** Variables CSS (:root), Flexbox, Diseño Responsivo.
 * **JavaScript (ES6+):** Manipulación del DOM, manejo de Arrays (`push`, `splice`, `forEach`) y almacenamiento local (`JSON.parse/stringify`).
 
-## 🔗 Demo
+## 🔗 PAGINA WEB
 [https://github.com/Byte21m/Lista-de-tareas---Javascript](https://byte21m.github.io/Lista-de-tareas---Javascript/)
